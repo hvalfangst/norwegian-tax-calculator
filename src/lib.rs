@@ -11,15 +11,7 @@ use components::*;
 #[wasm_bindgen]
 pub fn run() {
     console_error_panic_hook::set_once();
-    mount_to(
-        leptos::web_sys::window()
-            .unwrap()
-            .document()
-            .unwrap()
-            .get_element_by_id("leptos")
-            .unwrap(),
-        App,
-    );
+    leptos::mount_to_body(App);
 }
 
 #[component]
@@ -47,7 +39,7 @@ fn App() -> impl IntoView {
 fn HomePage() -> impl IntoView {
     view! {
         <div class="container">
-            <h1>"Norsk Skattekalkulator / Norwegian Tax Calculator"</h1>
+            <h1>"Norsk Skattekalkulator"</h1>
             <TaxCalculator/>
         </div>
     }
