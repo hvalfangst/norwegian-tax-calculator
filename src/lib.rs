@@ -11,7 +11,15 @@ use components::*;
 #[wasm_bindgen]
 pub fn run() {
     console_error_panic_hook::set_once();
-    mount_to_body(App);
+    mount_to(
+        leptos::web_sys::window()
+            .unwrap()
+            .document()
+            .unwrap()
+            .get_element_by_id("leptos")
+            .unwrap(),
+        App,
+    );
 }
 
 #[component]
