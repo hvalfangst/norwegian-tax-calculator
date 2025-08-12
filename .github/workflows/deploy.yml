@@ -31,7 +31,7 @@ jobs:
       
     - name: Build WASM
       run: |
-        wasm-pack build --target web --out-dir pkg --out-name norwegian_tax_calculator
+        wasm-pack build --target web --out-dir pkg --out-name norwegian-tax-calculator
         
     - name: Create deployment directory
       run: |
